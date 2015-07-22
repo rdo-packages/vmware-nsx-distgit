@@ -52,9 +52,10 @@ This package contains %{vendor} networking driver for OpenStack Neutron.
 %prep
 %setup -q -n %{srcname}-%{upstream_version}
 
+rm requirements.txt test-requirements.txt
+
 
 %build
-rm requirements.txt test-requirements.txt
 %{__python2} setup.py build
 %{__python2} setup.py build_sphinx
 rm %{docpath}/.buildinfo
@@ -73,3 +74,6 @@ export SKIP_PIP_INSTALL=1
 %{python2_sitelib}/vmware_nsx
 %{python2_sitelib}/vmware_nsx-%{version}-py%{python2_version}.egg-info
 %{python2_sitelib}/vmware_nsx-%{version}-py%{python2_version}-nspkg.pth
+
+
+%changelog
