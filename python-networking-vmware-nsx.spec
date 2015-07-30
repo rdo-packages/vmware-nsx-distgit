@@ -73,7 +73,6 @@ export SKIP_PIP_INSTALL=1
 %{_bindir}/neutron-check-nsx-config
 %{python2_sitelib}/vmware_nsx
 %{python2_sitelib}/vmware_nsx-%{version}-py%{python2_version}.egg-info
-%{python2_sitelib}/vmware_nsx-%{version}-py%{python2_version}-nspkg.pth
 
 
 %changelog
