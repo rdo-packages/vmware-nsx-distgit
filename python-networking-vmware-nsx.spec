@@ -12,37 +12,30 @@ License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{srcname}
 Source0:        https://pypi.python.org/packages/source/n/%{srcname}/%{srcname}-%{version}.tar.gz
 
-# TODO: some of those dependencies are not available in repos, so left them version-less
 BuildArch:      noarch
 BuildRequires:  python2-devel
-#BuildRequires:  python-mock >= 1.1
-BuildRequires:  python-mock
 BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
 
-#Requires:	python-eventlet >= 0.17.4
-Requires:	python-eventlet
+Requires:	python-eventlet >= 0.16.1
 Requires:	python-httplib2 >= 0.7.5
 Requires:	python-netaddr >= 0.7.12
 Requires:	python-neutron
-Requires:	python-oslo-concurrency >= 2.1.0
-Requires:	python-oslo-config >= 2:1.11.0
-Requires:	python-oslo-db >= 1.12.0
+Requires:	python-oslo-concurrency >= 1.8.0
+Requires:	python-oslo-config >= 2:1.9.3
+Requires:	python-oslo-db >= 1.7.0
 Requires:	python-oslo-i18n >= 1.5.0
-Requires:	python-oslo-log >= 1.6.0
+Requires:	python-oslo-log >= 1.0.0
 Requires:	python-oslo-serialization >= 1.4.0
-Requires:	python-oslo-service >= 0.1.0
-Requires:	python-oslo-utils >= 1.9.0
-Requires:	python-oslo-vmware >= 0.13.1
-Requires:	python-pbr >= 1.3
+Requires:	python-oslo-utils >= 1.4.0
+Requires:	python-oslo-vmware >= 0.11.2
+Requires:	python-pbr >= 0.6
 Requires:	python-retrying >= 1.2.3
-Requires:	python-six >= 1.9.0
+Requires:	python-six >= 1.7.0
 Requires:	python-sqlalchemy >= 0.9.7
-Requires:	python-stevedore >= 1.5.0
-#Requires:	python-tooz >= 0.16.0
-Requires:	python-tooz
+Requires:	python-stevedore >= 1.3.0
 
 
 %description
