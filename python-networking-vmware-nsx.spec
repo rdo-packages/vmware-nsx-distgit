@@ -1,11 +1,11 @@
-%global vendor VMware
+%global drv_vendor VMware
 %global srcname vmware-nsx
 %global docpath doc/build/html
 
 Name:           python-networking-%{srcname}
 Version:        XXX
 Release:        XXX
-Summary:        %{vendor} OpenStack Neutron driver
+Summary:        %{drv_vendor} OpenStack Neutron driver
 
 License:        ASL 2.0
 # TODO: really, there are no packages on PyPI or anywhere else
@@ -46,7 +46,7 @@ Requires:	python-tooz
 
 
 %description
-This package contains %{vendor} networking driver for OpenStack Neutron.
+This package contains %{drv_vendor} networking driver for OpenStack Neutron.
 
 
 %prep
