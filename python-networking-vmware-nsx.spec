@@ -1,6 +1,7 @@
 %global drv_vendor VMware
 %global srcname vmware-nsx
 %global docpath doc/build/html
+%global service neutron
 
 Name:           python-networking-%{srcname}
 Version:        XXX
@@ -76,12 +77,19 @@ export PBR_VERSION=%{version}
 export SKIP_PIP_INSTALL=1
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
+# Move config files to proper location
+install -d -m 755 %{buildroot}%{_sysconfdir}/%{service}
+mv %{buildroot}/usr/etc/%{service}/* %{buildroot}%{_sysconfdir}/%{service}
+chmod 640 %{buildroot}%{_sysconfdir}/%{service}/plugins/*/*.ini
+
 
 %files
 %license LICENSE
 %{_bindir}/neutron-check-nsx-config
 %{python2_sitelib}/vmware_nsx
 %{python2_sitelib}/vmware_nsx-%{version}-py%{python2_version}.egg-info
+%dir %{_sysconfdir}/%{service}/plugins/vmware
+%config(noreplace) %attr(0640, root, %{service}) %{_sysconfdir}/%{service}/plugins/vmware/*.ini
 
 
 %files doc
