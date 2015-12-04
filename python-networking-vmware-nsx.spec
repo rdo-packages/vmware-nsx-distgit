@@ -86,6 +86,7 @@ chmod 640 %{buildroot}%{_sysconfdir}/%{service}/plugins/*/*.ini
 %files
 %license LICENSE
 %{_bindir}/neutron-check-nsx-config
+%{_bindir}/nsxadmin
 %{python2_sitelib}/vmware_nsx
 %{python2_sitelib}/vmware_nsx-%{version}-py%{python2_version}.egg-info
 %dir %{_sysconfdir}/%{service}/plugins/vmware
