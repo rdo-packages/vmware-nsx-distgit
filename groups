@@ -1,3 +1,5 @@
-# UUID                                  	Group Name
-#
-1dab0d4517bc39ad51cd4569864c46430f1a2f90	vmware-nsx-distgit-ptl
+# UUID          Group Name
+6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
+92e60ada05990717e6d566f03c616b7eaec3c175       	vmware-nsx-distgit-core
+1dab0d4517bc39ad51cd4569864c46430f1a2f90        	vmware-nsx-distgit-ptl
+global:Registered-Users		Registered Users
