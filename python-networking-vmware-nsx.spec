@@ -22,6 +22,12 @@ BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
+# Required for config file generation
+BuildRequires:  python-debtcollector
+BuildRequires:  python-oslo-config >= 2:1.11.0
+BuildRequires:	python-oslo-i18n >= 1.5.0
+BuildRequires:	python-oslo-vmware >= 0.13.1
+BuildRequires:	python-neutron
 
 #Requires:	python-eventlet >= 0.17.4
 Requires:	python-eventlet
@@ -77,11 +83,12 @@ export PBR_VERSION=%{version}
 export SKIP_PIP_INSTALL=1
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
-# Move config files to proper location
-install -d -m 755 %{buildroot}%{_sysconfdir}/%{service}
-mv %{buildroot}/usr/etc/%{service}/* %{buildroot}%{_sysconfdir}/%{service}
-chmod 640 %{buildroot}%{_sysconfdir}/%{service}/plugins/*/*.ini
+# Build config file
+PYTHONPATH=. tools/generate_config_file_samples.sh
 
+# Move config files to proper location
+install -d -m 755 %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware
+mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.ini
 
 %files
 %license LICENSE
