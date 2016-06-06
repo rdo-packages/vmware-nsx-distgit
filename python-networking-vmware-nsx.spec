@@ -4,8 +4,8 @@
 %global service neutron
 
 Name:           python-networking-%{srcname}
-Version:        XXX
-Release:        XXX
+Version:        1.0.1
+Release:        1
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
 License:        ASL 2.0
@@ -99,3 +99,6 @@ chmod 640 %{buildroot}%{_sysconfdir}/%{service}/plugins/*/*.ini
 
 
 %changelog
+* Mon Jun 06 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.0.1-1
+- Update to 1.0.1
+
