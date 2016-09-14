@@ -1,3 +1,4 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global drv_vendor VMware
 %global srcname vmware-nsx
 %global docpath doc/build/html
