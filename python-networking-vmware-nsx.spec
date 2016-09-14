@@ -1,3 +1,4 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global drv_vendor VMware
 %global srcname vmware-nsx
 %global docpath doc/build/html
@@ -11,7 +12,7 @@ Summary:        %{drv_vendor} OpenStack Neutron driver
 License:        ASL 2.0
 # TODO: really, there are no packages on PyPI or anywhere else
 URL:            https://pypi.python.org/pypi/%{srcname}
-Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{upstream_version}.tar.gz
 
 # TODO: some of those dependencies are not available in repos, so left them version-less
 BuildArch:      noarch
