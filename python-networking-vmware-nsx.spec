@@ -23,6 +23,7 @@ BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
+BuildRequires:  python-tenacity
 # Required for config file generation
 BuildRequires:  python-debtcollector
 BuildRequires:  python-oslo-config >= 2:1.11.0
@@ -45,11 +46,11 @@ Requires:	python-oslo-service >= 0.1.0
 Requires:	python-oslo-utils >= 1.9.0
 Requires:	python-oslo-vmware >= 0.13.1
 Requires:	python-pbr >= 1.3
-Requires:	python-retrying >= 1.2.3
 Requires:	python-six >= 1.9.0
 Requires:	python-sqlalchemy >= 0.9.7
 Requires:	python-stevedore >= 1.5.0
 #Requires:	python-tooz >= 0.16.0
+Requires:   python-tenacity
 Requires:	python-tooz
 
 
