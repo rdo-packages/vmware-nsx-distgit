@@ -23,34 +23,35 @@ BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
+BuildRequires:  python-tenacity
 # Required for config file generation
 BuildRequires:  python-debtcollector
 BuildRequires:  python-oslo-config >= 2:1.11.0
-BuildRequires:	python-oslo-i18n >= 1.5.0
-BuildRequires:	python-oslo-vmware >= 0.13.1
-BuildRequires:	python-neutron
+BuildRequires:  python-oslo-i18n >= 1.5.0
+BuildRequires:  python-oslo-vmware >= 0.13.1
+BuildRequires:  python-neutron
 
-#Requires:	python-eventlet >= 0.17.4
-Requires:	python-eventlet
-Requires:	python-httplib2 >= 0.7.5
-Requires:	python-netaddr >= 0.7.12
-Requires:	python-neutron
-Requires:	python-oslo-concurrency >= 2.1.0
-Requires:	python-oslo-config >= 2:1.11.0
-Requires:	python-oslo-db >= 1.12.0
-Requires:	python-oslo-i18n >= 1.5.0
-Requires:	python-oslo-log >= 1.6.0
-Requires:	python-oslo-serialization >= 1.4.0
-Requires:	python-oslo-service >= 0.1.0
-Requires:	python-oslo-utils >= 1.9.0
-Requires:	python-oslo-vmware >= 0.13.1
-Requires:	python-pbr >= 1.3
-Requires:	python-retrying >= 1.2.3
-Requires:	python-six >= 1.9.0
-Requires:	python-sqlalchemy >= 0.9.7
-Requires:	python-stevedore >= 1.5.0
-#Requires:	python-tooz >= 0.16.0
-Requires:	python-tooz
+#Requires:      python-eventlet >= 0.17.4
+Requires:       python-eventlet
+Requires:       python-httplib2 >= 0.7.5
+Requires:       python-netaddr >= 0.7.12
+Requires:       python-neutron
+Requires:       python-oslo-concurrency >= 2.1.0
+Requires:       python-oslo-config >= 2:1.11.0
+Requires:       python-oslo-db >= 1.12.0
+Requires:       python-oslo-i18n >= 1.5.0
+Requires:       python-oslo-log >= 1.6.0
+Requires:       python-oslo-serialization >= 1.4.0
+Requires:       python-oslo-service >= 0.1.0
+Requires:       python-oslo-utils >= 1.9.0
+Requires:       python-oslo-vmware >= 0.13.1
+Requires:       python-pbr >= 1.3
+Requires:       python-six >= 1.9.0
+Requires:       python-sqlalchemy >= 0.9.7
+Requires:       python-stevedore >= 1.5.0
+Requires:       python-tenacity
+#Requires:      python-tooz >= 0.16.0
+Requires:       python-tooz
 
 
 %description
