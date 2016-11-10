@@ -24,6 +24,7 @@ BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
 BuildRequires:  python-tenacity
+BuildRequires:  python-vmware-nsxlib
 # Required for config file generation
 BuildRequires:  python-debtcollector
 BuildRequires:  python-oslo-config >= 2:1.11.0
@@ -53,7 +54,7 @@ Requires:       python-stevedore >= 1.5.0
 Requires:       python-tenacity
 #Requires:      python-tooz >= 1.28.0
 Requires:       python-tooz
-
+Requires:       python-vmware-nsxlib
 
 %description
 This package contains %{drv_vendor} networking driver for OpenStack Neutron.
