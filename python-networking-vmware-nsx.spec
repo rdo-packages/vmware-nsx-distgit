@@ -5,8 +5,8 @@
 %global service neutron
 
 Name:           python-networking-%{srcname}
-Version:        XXX
-Release:        XXX
+Version:        9.1.0
+Release:        1%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
 License:        ASL 2.0
@@ -108,3 +108,6 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 
 
 %changelog
+* Tue Nov 22 2016 Alfredo Moralejo <amoralej@redhat.com> 9.1.0-1
+- Update to 9.1.0
+
