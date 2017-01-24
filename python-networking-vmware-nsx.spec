@@ -111,3 +111,4 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/vmware-nsx/commit/?id=df95b51df31c166224e3ce7ed2cb3fc2ea85e780
