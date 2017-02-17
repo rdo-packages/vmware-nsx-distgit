@@ -33,23 +33,29 @@ BuildRequires:  python-oslo-vmware >= 0.13.1
 BuildRequires:  python-neutron
 
 #Requires:      python-eventlet >= 0.17.4
+Requires:       python-decorator
+Requires:       python-enum34
 Requires:       python-eventlet
 Requires:       python-httplib2 >= 0.7.5
 Requires:       python-netaddr >= 0.7.12
 Requires:       python-neutron
-Requires:       python-oslo-concurrency >= 2.1.0
-Requires:       python-oslo-config >= 2:1.11.0
-Requires:       python-oslo-db >= 1.12.0
-Requires:       python-oslo-i18n >= 1.5.0
-Requires:       python-oslo-log >= 1.6.0
-Requires:       python-oslo-serialization >= 1.4.0
-Requires:       python-oslo-service >= 0.1.0
-Requires:       python-oslo-utils >= 1.9.0
-Requires:       python-oslo-vmware >= 0.13.1
-Requires:       python-pbr >= 1.3
+Requires:       python-neutron-lib >= 1.1.0
+Requires:       python-openstackclient >= 3.3.0
+Requires:       python-osc-lib >= 1.2.0
+Requires:       python-oslo-concurrency >= 3.8.0
+Requires:       python-oslo-config >= 2:3.14.0
+Requires:       python-oslo-db >= 4.15.0
+Requires:       python-oslo-i18n >= 2.1.0
+Requires:       python-oslo-log >= 3.11.0
+Requires:       python-oslo-serialization >= 1.10.0
+Requires:       python-oslo-service >= 1.10.0
+Requires:       python-oslo-utils >= 3.18.0
+Requires:       python-oslo-vmware >= 2.17.0
+Requires:       python-pbr >= 1.8
+Requires:       python-prettytable
 Requires:       python-six >= 1.9.0
-Requires:       python-sqlalchemy >= 0.9.7
-Requires:       python-stevedore >= 1.5.0
+Requires:       python-sqlalchemy >= 1.0.10
+Requires:       python-stevedore >= 1.17.1
 #Requires:       python-tenacity >= 3.1.1
 Requires:       python-tenacity
 #Requires:      python-tooz >= 1.28.0
