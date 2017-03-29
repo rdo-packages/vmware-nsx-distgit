@@ -1,6 +1,9 @@
-# UUID                                  	Group Name
-#
-1dab0d4517bc39ad51cd4569864c46430f1a2f90	openstack/vmware-nsx-distgit-ptl
-63673ea7f2ae6a5666566b1ea9f14e473d00f5a9	rdo-core
-92e60ada05990717e6d566f03c616b7eaec3c175	openstack/vmware-nsx-distgit-core
-global:Registered-Users                 	Registered Users
+# UUID Group Name
+global:Registered-Users	Registered Users
+4572c517702492251ad622a289176552a8acbbb2	rdo-superusers
+global:Anonymous-Users	Anonymous Users
+9e1cf72aaba6abed861155c912d6fd4043b2a660	openstack/vmware-nsx-core
+05a678d3d4a168e149d5e8a0063bbd1b1c5526da	Administrators
+401cf37bee35d1c809d4d957e55f2a304f8eed69	rdo-provenpackagers
+acd3df3e39ce9f2bc5778bd7494cbe30bfca1b52	openstack/vmware-nsx-ptl
+6ddfecad023c6f4fa3ac8c4d2583c502ea675a73	Non-Interactive Users
