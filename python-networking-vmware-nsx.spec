@@ -102,7 +102,7 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 
 %files
 %license LICENSE
-%{_bindir}/neutron-api-replay
+%{_bindir}/nsx-migration
 %{_bindir}/neutron-check-nsx-config
 %{_bindir}/nsxadmin
 %{python2_sitelib}/vmware_nsx
