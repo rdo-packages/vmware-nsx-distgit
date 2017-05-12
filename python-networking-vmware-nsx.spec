@@ -102,6 +102,7 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 
 %files
 %license LICENSE
+%{_bindir}/nsx-migration
 %{_bindir}/neutron-api-replay
 %{_bindir}/neutron-check-nsx-config
 %{_bindir}/nsxadmin
@@ -119,4 +120,3 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 %changelog
 * Tue Mar 07 2017 Alfredo Moralejo <amoralej@redhat.com> 10.0.0-1
 - Update to 10.0.0
-
