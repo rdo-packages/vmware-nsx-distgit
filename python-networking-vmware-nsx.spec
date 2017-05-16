@@ -111,3 +111,4 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 * Tue Nov 22 2016 Alfredo Moralejo <amoralej@redhat.com> 9.1.0-1
 - Update to 9.1.0
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/vmware-nsx/commit/?id=4b3d57ccdf79cbf2277b322c06f98f0e4344fa31
