@@ -3,6 +3,7 @@
 %global srcname vmware-nsx
 %global docpath doc/build/html
 %global service neutron
+%global pyname vmware_nsx
 
 Name:           python-networking-%{srcname}
 Version:        XXX
@@ -76,6 +77,16 @@ This package contains documentation for %{drv_vendor} networking driver for
 OpenStack Neutron.
 
 
+%package -n     python-networking-%{srcname}-tests-tempest
+Summary:        python-networking-%{srcname} tempest plugin
+Requires:       python-networking-%{srcname} = %{version}-%{release}
+Requires:       python-tempest >= 12.0.0
+
+%description -n python-networking-%{srcname}-tests-tempest
+This package contains the tempest plugin files for the %{drv_vendor}
+OpenStack Neutron driver
+
+
 %prep
 %setup -q -n %{srcname}-%{upstream_version}
 
@@ -93,6 +104,9 @@ export PBR_VERSION=%{version}
 export SKIP_PIP_INSTALL=1
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
+# Create fake egg-info for the tempest plugin
+%py2_entrypoint %{pyname} %{pyname}
+
 # Build config file
 PYTHONPATH=. tools/generate_config_file_samples.sh
 
@@ -105,8 +119,8 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 %{_bindir}/nsx-migration
 %{_bindir}/neutron-check-nsx-config
 %{_bindir}/nsxadmin
-%{python2_sitelib}/vmware_nsx
-%{python2_sitelib}/vmware_nsx-%{version}-py%{python2_version}.egg-info
+%{python2_sitelib}/%{pyname}
+%{python2_sitelib}/%{pyname}-%{version}-py%{python2_version}.egg-info
 %dir %{_sysconfdir}/%{service}/plugins/vmware
 %config(noreplace) %attr(0640, root, %{service}) %{_sysconfdir}/%{service}/plugins/vmware/*.ini
 
@@ -115,5 +129,9 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 %license LICENSE
 %doc %{docpath}
 
+%files -n python-networking-%{srcname}-tests-tempest
+%license LICENSE
+%{python2_sitelib}/%{pyname}_tempest
+%{python2_sitelib}/%{pyname}_tests.egg-info
 
 %changelog
