@@ -5,6 +5,8 @@
 %global service neutron
 %global pyname vmware_nsx
 
+%global with_doc 1
+
 Name:           python-networking-%{srcname}
 Version:        XXX
 Release:        XXX
@@ -67,6 +69,7 @@ Requires:       python-vmware-nsxlib
 This package contains %{drv_vendor} networking driver for OpenStack Neutron.
 
 
+%if 0%{?with_doc}
 %package doc
 Summary:        %{summary} documentation
 Requires:       %{name} = %{version}-%{release}
@@ -75,6 +78,7 @@ Requires:       %{name} = %{version}-%{release}
 %description doc
 This package contains documentation for %{drv_vendor} networking driver for
 OpenStack Neutron.
+%endif
 
 
 %package -n     python-networking-%{srcname}-tests-tempest
@@ -95,8 +99,11 @@ rm requirements.txt test-requirements.txt
 
 %build
 %{__python2} setup.py build
+
+%if 0%{?with_doc}
 %{__python2} setup.py build_sphinx
 rm %{docpath}/.buildinfo
+%endif
 
 
 %install
@@ -125,9 +132,11 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 %config(noreplace) %attr(0640, root, %{service}) %{_sysconfdir}/%{service}/plugins/vmware/*.ini
 
 
+%if 0%{?with_doc}
 %files doc
 %license LICENSE
 %doc %{docpath}
+%endif
 
 %files -n python-networking-%{srcname}-tests-tempest
 %license LICENSE
