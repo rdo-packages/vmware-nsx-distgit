@@ -17,6 +17,7 @@ Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{upstream_
 
 # TODO: some of those dependencies are not available in repos, so left them version-less
 BuildArch:      noarch
+BuildRequires:  openstack-macros
 BuildRequires:  python2-devel
 #BuildRequires:  python-mock >= 1.1
 BuildRequires:  python-mock
