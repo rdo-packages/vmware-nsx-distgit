@@ -17,11 +17,9 @@ License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{srcname}
 Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{upstream_version}.tar.gz
 
-# TODO: some of those dependencies are not available in repos, so left them version-less
 BuildArch:      noarch
 BuildRequires:  openstack-macros
 BuildRequires:  python2-devel
-#BuildRequires:  python-mock >= 1.1
 BuildRequires:  python-mock
 BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-pbr
@@ -31,39 +29,34 @@ BuildRequires:  python-tenacity
 BuildRequires:  python-vmware-nsxlib
 # Required for config file generation
 BuildRequires:  python-debtcollector
-BuildRequires:  python-oslo-config >= 2:1.11.0
-BuildRequires:  python-oslo-i18n >= 1.5.0
-BuildRequires:  python-oslo-vmware >= 0.13.1
-BuildRequires:  python-neutron
+BuildRequires:  python-oslo-config >= 2:4.0.0
+BuildRequires:  python-oslo-i18n >= 2.1.0
+BuildRequires:  python-oslo-vmware >= 2.17.0
 
-#Requires:      python-eventlet >= 0.17.4
 Requires:       python-decorator
 Requires:       python-enum34
 Requires:       python-eventlet
 Requires:       python-httplib2 >= 0.7.5
-Requires:       python-netaddr >= 0.7.12
-Requires:       python-neutron
-Requires:       python-neutron-lib >= 1.1.0
+Requires:       python-netaddr >= 0.7.13
+Requires:       python-neutron-lib >= 1.9.0
 Requires:       python-openstackclient >= 3.3.0
-Requires:       python-osc-lib >= 1.2.0
+Requires:       python-osc-lib >= 1.7.0
 Requires:       python-oslo-concurrency >= 3.8.0
-Requires:       python-oslo-config >= 2:3.14.0
-Requires:       python-oslo-db >= 4.15.0
+Requires:       python-oslo-config >= 2:4.0.0
+Requires:       python-oslo-db >= 4.24.0
 Requires:       python-oslo-i18n >= 2.1.0
-Requires:       python-oslo-log >= 3.11.0
+Requires:       python-oslo-log >= 3.22.0
 Requires:       python-oslo-serialization >= 1.10.0
 Requires:       python-oslo-service >= 1.10.0
-Requires:       python-oslo-utils >= 3.18.0
+Requires:       python-oslo-utils >= 3.20.0
 Requires:       python-oslo-vmware >= 2.17.0
-Requires:       python-pbr >= 1.8
+Requires:       python-pbr >= 2.0.0
 Requires:       python-prettytable
 Requires:       python-six >= 1.9.0
 Requires:       python-sqlalchemy >= 1.0.10
-Requires:       python-stevedore >= 1.17.1
-#Requires:       python-tenacity >= 3.1.1
-Requires:       python-tenacity
-#Requires:      python-tooz >= 1.28.0
-Requires:       python-tooz
+Requires:       python-stevedore >= 1.20.0
+Requires:       python-tenacity >= 3.2.1
+Requires:       python-tooz >= 1.47.0
 Requires:       python-vmware-nsxlib
 
 %description
