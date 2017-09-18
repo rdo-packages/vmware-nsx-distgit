@@ -33,6 +33,7 @@ BuildRequires:  python-oslo-config >= 2:4.0.0
 BuildRequires:  python-oslo-i18n >= 2.1.0
 BuildRequires:  python-oslo-vmware >= 2.17.0
 BuildRequires:  python-neutron
+BuildRequires:  openstack-macros
 
 Requires:       python-decorator
 Requires:       python-enum34
@@ -79,7 +80,7 @@ OpenStack Neutron.
 %prep
 %setup -q -n %{srcname}-%{upstream_version}
 
-rm requirements.txt test-requirements.txt
+%py_req_cleanup
 
 
 %build
