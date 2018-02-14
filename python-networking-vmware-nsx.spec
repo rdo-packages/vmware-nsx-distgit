@@ -20,47 +20,48 @@ Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{upstream_
 BuildArch:      noarch
 BuildRequires:  openstack-macros
 BuildRequires:  python2-devel
-BuildRequires:  python-mock
-BuildRequires:  python-oslo-sphinx
-BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
-BuildRequires:  python-sphinx
-BuildRequires:  python-tenacity
-BuildRequires:  python-vmware-nsxlib
+BuildRequires:  python2-mock
+BuildRequires:  python2-oslo-sphinx
+BuildRequires:  python2-pbr
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-tenacity
+BuildRequires:  python2-vmware-nsxlib
 # Required for config file generation
-BuildRequires:  python-debtcollector
-BuildRequires:  python-oslo-config >= 2:4.0.0
-BuildRequires:  python-oslo-i18n >= 2.1.0
-BuildRequires:  python-oslo-vmware >= 2.17.0
+BuildRequires:  python2-debtcollector
+BuildRequires:  python2-oslo-config >= 2:5.1.0
+BuildRequires:  python2-oslo-i18n >= 3.15.3
+BuildRequires:  python2-oslo-vmware >= 2.17.0
 BuildRequires:  python-neutron
 BuildRequires:  openstack-macros
 
 Requires:       python-decorator
 Requires:       python-enum34
-Requires:       python-eventlet
-Requires:       python-httplib2 >= 0.7.5
-Requires:       python-netaddr >= 0.7.13
+Requires:       python2-eventlet
+Requires:       python-httplib2 >= 0.9.1
+Requires:       python2-netaddr >= 0.7.18
 Requires:       python-neutron
-Requires:       python-neutron-lib >= 1.9.0
-Requires:       python-openstackclient >= 3.3.0
-Requires:       python-osc-lib >= 1.7.0
-Requires:       python-oslo-concurrency >= 3.8.0
-Requires:       python-oslo-config >= 2:4.0.0
-Requires:       python-oslo-db >= 4.24.0
-Requires:       python-oslo-i18n >= 2.1.0
-Requires:       python-oslo-log >= 3.22.0
-Requires:       python-oslo-serialization >= 1.10.0
-Requires:       python-oslo-service >= 1.10.0
-Requires:       python-oslo-utils >= 3.20.0
-Requires:       python-oslo-vmware >= 2.17.0
-Requires:       python-pbr >= 2.0.0
-Requires:       python-prettytable
-Requires:       python-six >= 1.9.0
-Requires:       python-sqlalchemy >= 1.0.10
-Requires:       python-stevedore >= 1.20.0
-Requires:       python-tenacity >= 3.2.1
-Requires:       python-tooz >= 1.47.0
-Requires:       python-vmware-nsxlib
+Requires:       python-neutron-lib >= 1.13.0
+Requires:       python2-openstackclient >= 3.12.0
+Requires:       python2-osc-lib >= 1.8.0
+Requires:       python2-oslo-concurrency >= 3.25.0
+Requires:       python2-oslo-config >= 2:5.1.0
+Requires:       python2-oslo-context >= 2.19.2
+Requires:       python2-oslo-db >= 4.27.0
+Requires:       python2-oslo-i18n >= 3.15.3
+Requires:       python2-oslo-log >= 3.36.0
+Requires:       python2-oslo-serialization >= 2.18.0
+Requires:       python2-oslo-service >= 1.24.0
+Requires:       python2-oslo-utils >= 3.33.0
+Requires:       python2-oslo-vmware >= 2.17.0
+Requires:       python2-pbr >= 2.0.0
+Requires:       python2-prettytable
+Requires:       python2-six >= 1.10.0
+Requires:       python2-sqlalchemy >= 1.0.10
+Requires:       python2-stevedore >= 1.20.0
+Requires:       python2-tenacity >= 3.2.1
+Requires:       python2-tooz >= 1.58.0
+Requires:       python2-vmware-nsxlib
 
 %description
 This package contains %{drv_vendor} networking driver for OpenStack Neutron.
