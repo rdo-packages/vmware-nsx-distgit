@@ -40,8 +40,8 @@ Requires:       python-enum34
 Requires:       python2-eventlet
 Requires:       python-httplib2 >= 0.9.1
 Requires:       python2-netaddr >= 0.7.18
-Requires:       python-neutron
-Requires:       python-neutron-lib >= 1.13.0
+Requires:       python-neutron >= 1:13.0.0
+Requires:       python-neutron-lib >= 1.18.0
 Requires:       python2-openstackclient >= 3.12.0
 Requires:       python2-osc-lib >= 1.8.0
 Requires:       python2-oslo-concurrency >= 3.25.0
@@ -62,6 +62,7 @@ Requires:       python2-stevedore >= 1.20.0
 Requires:       python2-tenacity >= 3.2.1
 Requires:       python2-tooz >= 1.58.0
 Requires:       python2-vmware-nsxlib
+Requires:       python2-ovsdbapp >= 0.10.0
 
 %description
 This package contains %{drv_vendor} networking driver for OpenStack Neutron.
