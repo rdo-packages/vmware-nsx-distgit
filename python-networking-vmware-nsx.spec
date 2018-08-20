@@ -8,8 +8,8 @@
 %global with_doc 1
 
 Name:           python-networking-%{srcname}
-Version:        XXX
-Release:        XXX
+Version:        13.0.0
+Release:        1%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
 License:        ASL 2.0
@@ -124,4 +124,7 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 %endif
 
 %changelog
+* Mon Aug 20 2018 RDO <dev@lists.rdoproject.org> 13.0.0-1
+- Update to 13.0.0
+
 
