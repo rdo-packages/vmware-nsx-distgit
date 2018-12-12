@@ -1,3 +1,14 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
+%endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global drv_vendor VMware
 %global srcname vmware-nsx
@@ -19,52 +30,69 @@ Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{upstream_
 
 BuildArch:      noarch
 BuildRequires:  openstack-macros
-BuildRequires:  python2-devel
-BuildRequires:  python2-mock
-BuildRequires:  python2-oslo-sphinx
-BuildRequires:  python2-pbr
-BuildRequires:  python2-setuptools
-BuildRequires:  python2-sphinx
-BuildRequires:  python2-tenacity
-BuildRequires:  python2-vmware-nsxlib
+BuildRequires:  python%{pyver}-devel
+BuildRequires:  python%{pyver}-mock
+BuildRequires:  python%{pyver}-oslo-sphinx
+BuildRequires:  python%{pyver}-pbr
+BuildRequires:  python%{pyver}-setuptools
+BuildRequires:  python%{pyver}-sphinx
+BuildRequires:  python%{pyver}-tenacity
+BuildRequires:  python%{pyver}-vmware-nsxlib
 # Required for config file generation
-BuildRequires:  python2-debtcollector
-BuildRequires:  python2-oslo-config >= 2:5.1.0
-BuildRequires:  python2-oslo-i18n >= 3.15.3
-BuildRequires:  python2-oslo-vmware >= 2.17.0
-BuildRequires:  python-neutron
+BuildRequires:  python%{pyver}-debtcollector
+BuildRequires:  python%{pyver}-oslo-config >= 2:5.1.0
+BuildRequires:  python%{pyver}-oslo-i18n >= 3.15.3
+BuildRequires:  python%{pyver}-oslo-vmware >= 2.17.0
+BuildRequires:  python%{pyver}-neutron
 BuildRequires:  openstack-macros
 
+%description
+This package contains %{drv_vendor} networking driver for OpenStack Neutron.
+
+%package -n python%{pyver}-networking-%{srcname}
+%{?python_provide:%python_provide python%{pyver}-networking-%{srcname}}
+Summary:        %{drv_vendor} OpenStack Neutron driver
+%if %{pyver} == 3
+Obsoletes: python2-%{srcname} < %{version}-%{release}
+%endif
+
+Requires:       python%{pyver}-eventlet
+Requires:       python%{pyver}-netaddr >= 0.7.18
+Requires:       python%{pyver}-neutron >= 1:13.0.0
+Requires:       python%{pyver}-neutron-lib >= 1.18.0
+Requires:       python%{pyver}-openstackclient >= 3.12.0
+Requires:       python%{pyver}-osc-lib >= 1.8.0
+Requires:       python%{pyver}-oslo-concurrency >= 3.25.0
+Requires:       python%{pyver}-oslo-config >= 2:5.1.0
+Requires:       python%{pyver}-oslo-context >= 2.19.2
+Requires:       python%{pyver}-oslo-db >= 4.27.0
+Requires:       python%{pyver}-oslo-i18n >= 3.15.3
+Requires:       python%{pyver}-oslo-log >= 3.36.0
+Requires:       python%{pyver}-oslo-serialization >= 2.18.0
+Requires:       python%{pyver}-oslo-service >= 1.24.0
+Requires:       python%{pyver}-oslo-utils >= 3.33.0
+Requires:       python%{pyver}-oslo-vmware >= 2.17.0
+Requires:       python%{pyver}-pbr >= 2.0.0
+Requires:       python%{pyver}-prettytable
+Requires:       python%{pyver}-six >= 1.10.0
+Requires:       python%{pyver}-sqlalchemy >= 1.0.10
+Requires:       python%{pyver}-stevedore >= 1.20.0
+Requires:       python%{pyver}-tenacity >= 3.2.1
+Requires:       python%{pyver}-tooz >= 1.58.0
+Requires:       python%{pyver}-vmware-nsxlib
+Requires:       python%{pyver}-ovsdbapp >= 0.10.0
+
+# Handle python2 exception
+%if %{pyver} == 2
 Requires:       python-decorator
 Requires:       python-enum34
-Requires:       python2-eventlet
 Requires:       python-httplib2 >= 0.9.1
-Requires:       python2-netaddr >= 0.7.18
-Requires:       python-neutron >= 1:13.0.0
-Requires:       python-neutron-lib >= 1.18.0
-Requires:       python2-openstackclient >= 3.12.0
-Requires:       python2-osc-lib >= 1.8.0
-Requires:       python2-oslo-concurrency >= 3.25.0
-Requires:       python2-oslo-config >= 2:5.1.0
-Requires:       python2-oslo-context >= 2.19.2
-Requires:       python2-oslo-db >= 4.27.0
-Requires:       python2-oslo-i18n >= 3.15.3
-Requires:       python2-oslo-log >= 3.36.0
-Requires:       python2-oslo-serialization >= 2.18.0
-Requires:       python2-oslo-service >= 1.24.0
-Requires:       python2-oslo-utils >= 3.33.0
-Requires:       python2-oslo-vmware >= 2.17.0
-Requires:       python2-pbr >= 2.0.0
-Requires:       python2-prettytable
-Requires:       python2-six >= 1.10.0
-Requires:       python2-sqlalchemy >= 1.0.10
-Requires:       python2-stevedore >= 1.20.0
-Requires:       python2-tenacity >= 3.2.1
-Requires:       python2-tooz >= 1.58.0
-Requires:       python2-vmware-nsxlib
-Requires:       python2-ovsdbapp >= 0.10.0
+%else
+Requires:       python%{pyver}-decorator
+Requires:       python%{pyver}-httplib2 >= 0.9.1
+%endif
 
-%description
+%description -n python%{pyver}-networking-%{srcname}
 This package contains %{drv_vendor} networking driver for OpenStack Neutron.
 
 
@@ -86,33 +114,35 @@ OpenStack Neutron.
 
 
 %build
-%{__python2} setup.py build
+%{pyver_build}
 
 %if 0%{?with_doc}
-%{__python2} setup.py build_sphinx
+%{pyver_bin} setup.py build_sphinx
 rm %{docpath}/.buildinfo
 %endif
 
 
 %install
 export PBR_VERSION=%{version}
-export SKIP_PIP_INSTALL=1
-%{__python2} setup.py install --skip-build --root %{buildroot}
+%{pyver_install}
 
-# Build config file
-PYTHONPATH=. tools/generate_config_file_samples.sh
+# Generate configuration files
+PYTHONPATH=.
+for file in `ls etc/oslo-config-generator/*`; do
+    oslo-config-generator-%{pyver} --config-file=$file
+done
 
 # Move config files to proper location
 install -d -m 755 %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware
 mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.ini
 
-%files
+%files -n python%{pyver}-networking-%{srcname}
 %license LICENSE
 %{_bindir}/nsx-migration
 %{_bindir}/neutron-check-nsx-config
 %{_bindir}/nsxadmin
-%{python2_sitelib}/%{pyname}
-%{python2_sitelib}/%{pyname}-%{version}-py%{python2_version}.egg-info
+%{pyver_sitelib}/%{pyname}
+%{pyver_sitelib}/%{pyname}-%{version}-*.egg-info
 %dir %{_sysconfdir}/%{service}/plugins/vmware
 %config(noreplace) %attr(0640, root, %{service}) %{_sysconfdir}/%{service}/plugins/vmware/*.ini
 
@@ -124,4 +154,3 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 %endif
 
 %changelog
-
