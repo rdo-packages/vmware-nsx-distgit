@@ -15,6 +15,7 @@
 %global docpath doc/build/html
 %global service neutron
 %global pyname vmware_nsx
+%global rhosp 0
 
 %global with_doc 1
 
@@ -56,9 +57,11 @@ Summary:        %{drv_vendor} OpenStack Neutron driver
 Obsoletes: python2-%{srcname} < %{version}-%{release}
 %endif
 
+%if 0%{?rhosp} == 0
 Requires:       openstack-neutron-fwaas >= 1:12.0.0
-Requires:       openstack-neutron-lbaas >= 1:12.0.0
 Requires:       openstack-neutron-vpnaas >= 1:12.0.0
+%endif
+Requires:       openstack-neutron-lbaas >= 1:12.0.0
 Requires:       openstack-neutron-common >= 1:12.0.0
 Requires:       python%{pyver}-eventlet >= 0.24.1
 Requires:       python%{pyver}-netaddr >= 0.7.18
