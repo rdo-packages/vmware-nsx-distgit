@@ -32,7 +32,7 @@ BuildArch:      noarch
 BuildRequires:  openstack-macros
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-mock >= 2.0.0
-BuildRequires:  python%{pyver}-oslo-sphinx
+BuildRequires:  python%{pyver}-openstackdocstheme
 BuildRequires:  python%{pyver}-pbr
 BuildRequires:  python%{pyver}-setuptools
 BuildRequires:  python%{pyver}-sphinx
@@ -123,8 +123,8 @@ OpenStack Neutron.
 %{pyver_build}
 
 %if 0%{?with_doc}
-%{pyver_bin} setup.py build_sphinx
-rm %{docpath}/.buildinfo
+sphinx-build-%{pyver} -b html doc/source doc/build/html
+rm -rf %{docpath}/.buildinfo %{docpath}/.doctrees
 %endif
 
 
