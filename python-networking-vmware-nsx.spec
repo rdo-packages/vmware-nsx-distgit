@@ -61,7 +61,6 @@ Obsoletes: python2-%{srcname} < %{version}-%{release}
 Requires:       openstack-neutron-fwaas >= 1:12.0.0
 Requires:       openstack-neutron-vpnaas >= 1:12.0.0
 %endif
-Requires:       openstack-neutron-lbaas >= 1:12.0.0
 Requires:       openstack-neutron-common >= 1:12.0.0
 Requires:       python%{pyver}-eventlet >= 0.24.1
 Requires:       python%{pyver}-netaddr >= 0.7.18
