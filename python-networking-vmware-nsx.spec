@@ -166,3 +166,4 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 * Mon Apr 08 2019 Slawek Kaplonski <skaplons@redhat.com> 14.0.0-1
 - Update to 14.0.0
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/vmware-nsx/commit/?id=625706119f360621a02d2cd678dc52925c078bca
