@@ -9,7 +9,15 @@
 %global pyver_install %py%{pyver}_install
 %global pyver_build %py%{pyver}_build
 # End of macros for py2/py3 compatibility
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%{!?upstream_version: %global upstream_version %{commit}}
+%global commit 33217514d14fc178d2ca1a8c4e3fc22fe368d8e6
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+# DO NOT REMOVE ALPHATAG
+%global alphatag .%{shortcommit}git
+%{?dlrn: %global tarsources %{srcname}-%{upstream_version}}
+%{!?dlrn: %global tarsources %{srcname}}
+
+
 %global drv_vendor VMware
 %global srcname vmware-nsx
 %global docpath doc/build/html
@@ -20,16 +28,17 @@
 %global with_doc 1
 
 Name:           python-networking-%{srcname}
-Version:        XXX
-Release:        XXX
+Version:        14.0.0
+Release:        2%{?alphatag}%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
 License:        ASL 2.0
 # TODO: really, there are no packages on PyPI or anywhere else
 URL:            https://pypi.python.org/pypi/%{srcname}
-Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{upstream_version}.tar.gz
+Source0:        https://opendev.org/x/%{srcname}/archive/%{upstream_version}.tar.gz#/%{srcname}-%{shortcommit}.tar.gz
 
 BuildArch:      noarch
+BuildRequires:  git
 BuildRequires:  openstack-macros
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-mock >= 2.0.0
@@ -116,7 +125,7 @@ OpenStack Neutron.
 %endif
 
 %prep
-%setup -q -n %{srcname}-%{upstream_version}
+%autosetup -n %{tarsources} -S git
 
 %py_req_cleanup
 
@@ -162,3 +171,6 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 %endif
 
 %changelog
+* Thu Oct 10 2019 RDO <dev@lists.rdoproject.org> 14.0.0-2.3321751git
+- Update to 14.0.0 post (33217514d14fc178d2ca1a8c4e3fc22fe368d8e6)
+
