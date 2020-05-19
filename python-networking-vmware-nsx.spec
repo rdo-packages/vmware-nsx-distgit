@@ -9,14 +9,14 @@
 %global with_doc 1
 
 Name:           python-networking-%{srcname}
-Version:        15.0.0
+Version:        16.0.0
 Release:        1%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
 License:        ASL 2.0
 # TODO: really, there are no packages on PyPI or anywhere else
 URL:            https://pypi.python.org/pypi/%{srcname}
-Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{upstream_version}.tar.gz
+Source0:        https://tarballs.opendev.org/x/%{srcname}/%{srcname}-%{upstream_version}.tar.gz
 
 BuildArch:      noarch
 BuildRequires:  openstack-macros
@@ -146,6 +146,9 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 %endif
 
 %changelog
+* Tue May 19 2020 RDO <dev@lists.rdoproject.org> 16.0.0-1
+- Update to 16.0.0
+
 * Thu May 07 2020 RDO <dev@lists.rdoproject.org> 15.0.0-1
 - Update to 15.0.0
 
