@@ -45,7 +45,6 @@ Summary:        %{drv_vendor} OpenStack Neutron driver
 Obsoletes: python2-%{srcname} < %{version}-%{release}
 
 %if 0%{?rhosp} == 0
-Requires:       openstack-neutron-fwaas >= 1:15.0.0
 Requires:       openstack-neutron-vpnaas >= 1:15.0.0
 %endif
 Requires:       openstack-neutron-common >= 1:15.0.0
