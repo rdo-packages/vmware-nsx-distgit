@@ -21,7 +21,6 @@ Source0:        https://tarballs.opendev.org/x/%{srcname}/%{srcname}-%{upstream_
 BuildArch:      noarch
 BuildRequires:  openstack-macros
 BuildRequires:  python3-devel
-BuildRequires:  python3-mock >= 2.0.0
 BuildRequires:  python3-openstackdocstheme
 BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
@@ -45,7 +44,7 @@ Summary:        %{drv_vendor} OpenStack Neutron driver
 Obsoletes: python2-%{srcname} < %{version}-%{release}
 
 %if 0%{?rhosp} == 0
-Requires:       openstack-neutron-vpnaas >= 1:15.0.0
+Requires:       openstack-neutron-vpnaas >= 1:16.0.0.0
 %endif
 Requires:       openstack-neutron-common >= 1:15.0.0
 Requires:       python3-eventlet >= 0.24.1
@@ -55,7 +54,7 @@ Requires:       python3-networking-sfc >= 9.0.0.0
 Requires:       python3-neutron >= 1:13.0.0
 Requires:       python3-neutron-dynamic-routing >= 15.0.0
 Requires:       python3-neutron-lib >= 2.0.0
-Requires:       python3-openstackclient >= 4.0.0
+Requires:       python3-openstackclient >= 5.3.0
 Requires:       python3-osc-lib >= 1.14.0
 Requires:       python3-oslo-concurrency >= 3.26.0
 Requires:       python3-oslo-config >= 2:5.2.0
@@ -67,16 +66,15 @@ Requires:       python3-oslo-serialization >= 2.28.1
 Requires:       python3-oslo-service >= 1.31.0
 Requires:       python3-oslo-utils >= 3.33.0
 Requires:       python3-oslo-vmware >= 2.17.0
+Requires:       python3-paramiko >= 2.4.0
 Requires:       python3-pbr >= 4.0.0
 Requires:       python3-prettytable >= 0.7.2
-Requires:       python3-six >= 1.11.0
 Requires:       python3-sqlalchemy >= 1.2.0
 Requires:       python3-stevedore >= 1.20.0
 Requires:       python3-tenacity >= 5.0.2
 Requires:       python3-tooz >= 1.58.0
-Requires:       python3-vmware-nsxlib >= 15.0.1
+Requires:       python3-vmware-nsxlib >= 16.0.0
 Requires:       python3-ovsdbapp >= 0.10.0
-Requires:       python3-mock >= 2.0.0
 Requires:       python3-octavia-lib >= 1.3.1
 Requires:       python3-oslo-policy >= 1.30.0
 Requires:       python3-requests >= 2.14.2
