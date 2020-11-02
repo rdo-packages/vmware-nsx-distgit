@@ -1,3 +1,5 @@
+%{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
+%global sources_gpg_sign 0x5d2d1e4fb8d38e6af76c50d53d4fec30cf5ce3da
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global drv_vendor VMware
 %global srcname vmware-nsx
@@ -9,16 +11,26 @@
 %global with_doc 1
 
 Name:           python-networking-%{srcname}
-Version:        XXX
-Release:        XXX
+Version:        17.0.0
+Release:        1%{?dist}
 Summary:        %{drv_vendor} OpenStack Neutron driver
 
 License:        ASL 2.0
 # TODO: really, there are no packages on PyPI or anywhere else
 URL:            https://pypi.python.org/pypi/%{srcname}
 Source0:        https://tarballs.opendev.org/x/%{srcname}/%{srcname}-%{upstream_version}.tar.gz
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+Source101:        https://tarballs.opendev.org/x/%{srcname}/%{srcname}-%{upstream_version}.tar.gz.asc
+Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
+%endif
 
 BuildArch:      noarch
+
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+BuildRequires:  /usr/bin/gpgv2
+%endif
 BuildRequires:  openstack-macros
 BuildRequires:  python3-devel
 BuildRequires:  python3-openstackdocstheme
@@ -97,6 +109,10 @@ OpenStack Neutron.
 %endif
 
 %prep
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+%{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
+%endif
 %setup -q -n %{srcname}-%{upstream_version}
 
 %py_req_cleanup
@@ -143,3 +159,6 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 %endif
 
 %changelog
+* Mon Nov 02 2020 RDO <dev@lists.rdoproject.org> 17.0.0-1
+- Update to 17.0.0
+
