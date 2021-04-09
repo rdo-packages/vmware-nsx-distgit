@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad8cc305_8631586b",
+        "filename": "python-networking-vmware-nsx.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2021-04-09T11:27:06Z",
+      "side": 1,
+      "message": "maybe we can skip this update to unblock?",
+      "range": {
+        "startLine": 88,
+        "startChar": 41,
+        "endLine": 88,
+        "endChar": 47
+      },
+      "revId": "e894661d0fbad061092bac84d782b970f748d9b5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": true
+    }
+  ]
+}
