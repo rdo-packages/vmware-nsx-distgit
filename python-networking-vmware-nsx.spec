@@ -152,3 +152,4 @@ mv etc/nsx.ini.sample %{buildroot}%{_sysconfdir}/%{service}/plugins/vmware/nsx.i
 * Thu May 07 2020 RDO <dev@lists.rdoproject.org> 15.0.0-1
 - Update to 15.0.0
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/vmware-nsx/commit/c4818bcc31e81ff80c58f134d0515114d3989449
