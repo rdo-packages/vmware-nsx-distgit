@@ -82,6 +82,7 @@ Requires:       python3-paramiko >= 2.4.0
 Requires:       python3-pbr >= 4.0.0
 Requires:       python3-prettytable >= 0.7.2
 Requires:       python3-sqlalchemy >= 1.2.0
+Requires:       python3-sqlalchemy < 1.4.0
 Requires:       python3-stevedore >= 1.20.0
 Requires:       python3-tenacity >= 5.0.2
 Requires:       python3-tooz >= 1.58.0
