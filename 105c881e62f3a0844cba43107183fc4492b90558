@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43ee13f3_abd69cac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 757
+      },
+      "writtenOn": "2023-07-13T08:54:00Z",
+      "side": 1,
+      "message": "this project is removed: https://review.rdoproject.org/r/c/rdoinfo/+/48794",
+      "revId": "105c881e62f3a0844cba43107183fc4492b90558",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}

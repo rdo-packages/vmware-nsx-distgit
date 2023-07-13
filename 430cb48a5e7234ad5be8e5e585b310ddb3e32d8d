@@ -22,6 +22,30 @@
       },
       "revId": "430cb48a5e7234ad5be8e5e585b310ddb3e32d8d",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35254b65_817bd78c",
+        "filename": "python-networking-vmware-nsx.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 757
+      },
+      "writtenOn": "2023-07-13T08:54:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "157647f7_318d8fe6",
+      "range": {
+        "startLine": 140,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 51
+      },
+      "revId": "430cb48a5e7234ad5be8e5e585b310ddb3e32d8d",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
